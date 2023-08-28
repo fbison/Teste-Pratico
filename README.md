@@ -48,6 +48,8 @@ Ao abrir a solução, no projeto "TestePratico.Application", clique no botão di
 }
 ```
 
+Repita o processo no projeto "TestePratico.Infra.Data"
+
 No gerenciador de pacotes, selecione o TestePratico.Infra.Data e rode
 ```bash
 add-migration "MigracaoInicial"
@@ -77,7 +79,6 @@ Essa camada possui:
 A controller são os serviços, todas herdam a classe Api Controller Base, recebendo assim as seguintes funçoes:
  * Execute, para a execução e tratamente de todas as controllers
  * Bad Request, para envio de erros
- * ObterIdDoUsuario, permitindo que toda controller acesse o id do usuário logado
 
 ##### DTOS - Data Transfer Objects
 
