@@ -135,7 +135,7 @@ namespace TestePratico.Application.Controllers
         /// <summary>
         /// [Permitida para usuários administradores]] Obter candidatura específico pelo ID
         /// </summary>
-        /// <returns>Retorna todas as candidaturas</returns>        
+        /// <returns>Retorna candidatura do Id se houver</returns>        
         /// <param name="Id">Id da candidatura</param>
         /// <response code="200">Retorna a candidatura, solicitada</response>
         /// <response code="400">BadRequest</response>

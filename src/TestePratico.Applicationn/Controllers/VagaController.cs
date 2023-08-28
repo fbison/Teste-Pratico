@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization.Infrastructure;
 
 namespace TestePratico.Application.Controllers
 {
@@ -93,11 +94,11 @@ namespace TestePratico.Application.Controllers
             });
         }
         /// <summary>
-        /// [Permitida para usuários administradores]] Retorna todos os vagas
+        /// [Permitida para todos os usuários] Retorna todos os vagas
         /// </summary>
         /// <returns></returns>
         [HttpGet("ObterVagas")]
-        [Authorize(Roles = EnumTipoUsuario.Administrador)]
+        [Authorize]
         [ProducesResponseType(typeof(Result<List<ObterVagaResponse>>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErroResult), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErroResult), StatusCodes.Status500InternalServerError)]
@@ -121,7 +122,7 @@ namespace TestePratico.Application.Controllers
         }
 
         /// <summary>
-        /// [Permitida para usuários administradores]] Obter vaga específico pelo ID
+        /// [Permitida para usuários administradores] Obter vaga específico pelo ID
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -172,12 +173,12 @@ namespace TestePratico.Application.Controllers
                 var result = (_vagaService.ObterVagasPorEmpresa(idEmpresa));
                 if (result.IsValid)
                 {
-                    var response = _mapper.Map<ObterVagaResponse>(result.Valor);
-                    return Result<ObterVagaResponse>.Ok(response);
+                    var response = _mapper.Map<List<ObterVagaResponse>>(result.Valor);
+                    return Result<List<ObterVagaResponse>>.Ok(response);
                 }
                 else
                 {
-                    return Result<ObterVagaResponse>.Error(result.Notifications);
+                    return Result<List<ObterVagaResponse>>.Error(result.Notifications);
                 }
             });
         }

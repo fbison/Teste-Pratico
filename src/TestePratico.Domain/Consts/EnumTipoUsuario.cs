@@ -10,7 +10,6 @@ namespace TestePratico.Domain.Consts
     /// <summary>
     /// <para>Representa a tabela Funcao do banco de dados e todos os seus registros como atributos com seus valores iguais aos seus respectivos Ids</para>
     /// <para>É utilizado para definir autorizações de uso de endpoints</para>
-    /// <para>Obs: O valor "0" é reservado para TipoUsuario nulo, portanto não pode ser sobrescrito</para>
     /// </summary>
     public static class EnumTipoUsuario
     {

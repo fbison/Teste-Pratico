@@ -87,9 +87,9 @@
             <summary>
             [Permitida para usuários administradores]] Obter candidatura específico pelo ID
             </summary>
-            <returns>Retorna todas as candidaturas</returns>        
+            <returns>Retorna candidatura do Id se houver</returns>        
             <param name="Id">Id da candidatura</param>
-            <response code="200">Retorna todas as candidaturas</response>
+            <response code="200">Retorna a candidatura, solicitada</response>
             <response code="400">BadRequest</response>
             <response code="401">Problema de autenticação</response>
         </member>
@@ -132,6 +132,7 @@
         <member name="M:TestePratico.Application.Controllers.UsuarioController.CriarUsuario(TestePratico.Application.DTOs.CriarUsuarioRequest)">
             <summary>
             [Não realiza autenticação] Criar usuário
+            Tipo de Usuário: 1-> Administrador, 2->Usuário Externo
             </summary>
             <param name="usuario"></param>
             <returns></returns>
@@ -184,13 +185,13 @@
         </member>
         <member name="M:TestePratico.Application.Controllers.VagaController.ObterVagas">
             <summary>
-            [Permitida para usuários administradores]] Retorna todos os vagas
+            [Permitida para todos os usuários] Retorna todos os vagas
             </summary>
             <returns></returns>
         </member>
         <member name="M:TestePratico.Application.Controllers.VagaController.ObterPorId(System.Guid)">
             <summary>
-            [Permitida para usuários administradores]] Obter vaga específico pelo ID
+            [Permitida para usuários administradores] Obter vaga específico pelo ID
             </summary>
             <param name="id"></param>
             <returns></returns>

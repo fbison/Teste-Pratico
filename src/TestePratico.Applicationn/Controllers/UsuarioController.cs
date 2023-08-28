@@ -27,6 +27,7 @@ namespace TestePratico.Application.Controllers
 
         /// <summary>
         /// [Não realiza autenticação] Criar usuário
+        /// Tipo de Usuário: 1-> Administrador, 2->Usuário Externo
         /// </summary>
         /// <param name="usuario"></param>
         /// <returns></returns>

@@ -28,7 +28,7 @@ namespace TestePratico.Applicationn
 {
     public class Startup
     {
-        private const string APP_NAME = "Teste Pratico";
+        private const string APP_NAME = "Teste Pratico - Sistema de vagas Ploomes";
         private const string CORS_PROD = "_cors_prod";
         private const string CORS_DEV = "_cors_dev";
 

@@ -40,7 +40,7 @@ namespace TestePratico.Infra.Data.Repository
 
             return _dataDbContext.Set<Vaga>()
                     .Where(vaga => vaga.FkIdEmpresa == idEmpresa)
-                    .ToList(); ;
+                    .ToList();
         }
     }
 }
