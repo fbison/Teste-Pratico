@@ -1,0 +1,255 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TestePratico.Application</name>
+    </assembly>
+    <members>
+        <member name="T:TestePratico.Application.Controllers.ApiControllerBase">
+            <summary>
+            Classe base para as controllers da aplicação
+            </summary>
+        </member>
+        <member name="M:TestePratico.Application.Controllers.ApiControllerBase.BadRequest(System.Collections.Generic.IReadOnlyCollection{Flunt.Notifications.Notification})">
+            <summary>
+            Erro 400
+            </summary>
+            <param name="notifications"></param>
+            <returns></returns>
+        </member>
+        <member name="P:TestePratico.Application.Controllers.ApiControllerBase.IdUsuario">
+            <summary>
+            ID do usuário autenticado
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TestePratico.Application.Controllers.AreaCandidatoController.CandidatarUsuarioLogado(System.Guid)">
+            <summary>
+            [Permitida para usuários externos] Realizar Candidatura do usuário logado
+            </summary>
+            <param name="Id"></param>
+            <response code="200">Sucesso na candidatura</response>
+            <response code="400">BadRequest</response>
+            <response code="401">Problema de autenticação</response>
+        </member>
+        <member name="M:TestePratico.Application.Controllers.AreaCandidatoController.ObterVagasCandidatadas">
+            <summary>
+            [Permitida para usuários externos] Realizar Candidatura do usuário logado
+            </summary>
+            <param name="Id">Id da vaga para se candidatar</param>
+            <response code="200">Sucesso na candidatura</response>
+            <response code="400">BadRequest</response>
+            <response code="401">Problema de autenticação</response>
+        </member>
+        <member name="M:TestePratico.Application.Controllers.AreaCandidatoController.DescandidatarAVaga(System.Guid)">
+            <summary>
+            [Permitida para usuários externos] Descandidatar o usuário logado a uma vaga que ele se candidatou previamente
+            </summary>
+            <param name="Id">Id da vaga para se descandidatar</param>
+            <response code="200">Sucesso na descandidatação</response>
+            <response code="400">BadRequest</response>
+            <response code="401">Problema de autenticação</response>
+        </member>
+        <member name="M:TestePratico.Application.Controllers.CandidaturaController.CriarCandidatura(TestePratico.Application.DTOs.CriarCandidaturaRequest)">
+            <summary>
+            [Permitida para usuários administradores]] Criar candidatura
+            </summary>
+            <response code="200">Sucesso na criação</response>
+            <response code="400">BadRequest</response>
+            <response code="401">Problema de autenticação</response>
+        </member>
+        <member name="M:TestePratico.Application.Controllers.CandidaturaController.EditarCandidatura(TestePratico.Application.DTOs.EditarCandidaturaRequest)">
+            <summary>
+            [Permitida para usuários administradores]] Editar Usuário
+            </summary>
+            <response code="200">Sucesso na edição</response>
+            <response code="400">BadRequest</response>
+            <response code="401">Problema de autenticação</response>
+        </member>
+        <member name="M:TestePratico.Application.Controllers.CandidaturaController.DeletarCandidatura(System.Guid)">
+            <summary>
+            [Permitida para usuários administradores]] Deletar candidatura
+            </summary>
+            <param name="Id">Dados da candidatura a ser deletada</param>
+            <response code="200">Sucesso na deleção</response>
+            <response code="400">BadRequest</response>
+            <response code="401">Problema de autenticação</response>
+        </member>
+        <member name="M:TestePratico.Application.Controllers.CandidaturaController.ObterCandidaturas">
+            <summary>
+            [Permitida para usuários administradores]] Retorna todos os candidaturas
+            </summary>
+            <returns>Retorna todas as candidaturas</returns>        
+            <response code="200">Retorna todas as candidaturas</response>
+            <response code="400">BadRequest</response>
+            <response code="401">Problema de autenticação</response>
+        </member>
+        <member name="M:TestePratico.Application.Controllers.CandidaturaController.ObterPorId(System.Guid)">
+            <summary>
+            [Permitida para usuários administradores]] Obter candidatura específico pelo ID
+            </summary>
+            <returns>Retorna todas as candidaturas</returns>        
+            <param name="Id">Id da candidatura</param>
+            <response code="200">Retorna todas as candidaturas</response>
+            <response code="400">BadRequest</response>
+            <response code="401">Problema de autenticação</response>
+        </member>
+        <member name="M:TestePratico.Application.Controllers.EmpresaController.CriarEmpresa(TestePratico.Application.DTOs.CriarEmpresaRequest)">
+            <summary>
+            [Permitida para usuários administradores]] Criar empresa
+            </summary>
+            <param name="empresa"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestePratico.Application.Controllers.EmpresaController.EditarEmpresa(TestePratico.Application.DTOs.EditarEmpresaRequest)">
+            <summary>
+            [Permitida para usuários administradores]] Editar Usuário
+            </summary>
+        </member>
+        <member name="M:TestePratico.Application.Controllers.EmpresaController.DeletarEmpresa(System.Guid)">
+            <summary>
+            [Permitida para usuários administradores]] Deletar empresa
+            </summary>
+        </member>
+        <member name="M:TestePratico.Application.Controllers.EmpresaController.ObterEmpresas">
+            <summary>
+            [Permitida para usuários administradores]] Retorna todos os empresas
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TestePratico.Application.Controllers.EmpresaController.ObterPorId(System.Guid)">
+            <summary>
+            [Permitida para usuários administradores]] Obter empresa específico pelo ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestePratico.Application.Controllers.v1.LoginController.Autenticar(TestePratico.Application.DTOs.LoginRequest)">
+            <summary>
+            Realiza Login do usuário
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TestePratico.Application.Controllers.UsuarioController.CriarUsuario(TestePratico.Application.DTOs.CriarUsuarioRequest)">
+            <summary>
+            [Não realiza autenticação] Criar usuário
+            </summary>
+            <param name="usuario"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestePratico.Application.Controllers.UsuarioController.EditarUsuario(TestePratico.Application.DTOs.EditarUsuarioRequest)">
+            <summary>
+            [Permitida para usuários administradores]] Editar Usuário
+            </summary>
+        </member>
+        <member name="M:TestePratico.Application.Controllers.UsuarioController.DeletarUsuario(System.Guid)">
+            <summary>
+            [Permitida para usuários administradores]] Deletar usuário
+            </summary>
+        </member>
+        <member name="M:TestePratico.Application.Controllers.UsuarioController.ObterUsuarios">
+            <summary>
+            [Permitida para usuários administradores]] Retorna todos os usuários
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TestePratico.Application.Controllers.UsuarioController.ObterDadosUsuarioLogado">
+            <summary>
+            Retorna os dados do usuário Logado
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TestePratico.Application.Controllers.UsuarioController.ObterPorId(System.Guid)">
+            <summary>
+            [Permitida para usuários administradores]] Obter usuário específico pelo ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestePratico.Application.Controllers.VagaController.CriarVaga(TestePratico.Application.DTOs.CriarVagaRequest)">
+            <summary>
+            [Permitida para usuários administradores]] Criar vaga
+            </summary>
+            <param name="vaga"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestePratico.Application.Controllers.VagaController.EditarVaga(TestePratico.Application.DTOs.EditarVagaRequest)">
+            <summary>
+            [Permitida para usuários administradores]] Editar Usuário
+            </summary>
+        </member>
+        <member name="M:TestePratico.Application.Controllers.VagaController.DeletarVaga(System.Guid)">
+            <summary>
+            [Permitida para usuários administradores]] Deletar vaga
+            </summary>
+        </member>
+        <member name="M:TestePratico.Application.Controllers.VagaController.ObterVagas">
+            <summary>
+            [Permitida para usuários administradores]] Retorna todos os vagas
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TestePratico.Application.Controllers.VagaController.ObterPorId(System.Guid)">
+            <summary>
+            [Permitida para usuários administradores]] Obter vaga específico pelo ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestePratico.Application.Controllers.VagaController.ObterPorIdEmpresa(System.Guid)">
+            <summary>
+            [Permitida para usuários administradores]] Obter vaga específico pelo ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TestePratico.Application.Controllers.VagaController.ObterCandidatosDeVaga(System.Guid)">
+            <summary>
+            [Permitida para usuários administradores]] Obter vaga específico pelo ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TestePratico.Application.DTOs.ErroResult">
+            <summary>
+            Modelo de resultado para erros
+            </summary>
+        </member>
+        <member name="P:TestePratico.Application.DTOs.ErroResult.Erros">
+            <summary>
+            Lista com a descrição do erro
+            </summary>
+        </member>
+        <member name="M:TestePratico.Application.Filters.DefaultExceptionFilterAttribute.#ctor(System.String)">
+            <summary>
+            Construtor
+            </summary>
+            <param name="returnDetailsException"></param>
+        </member>
+        <member name="M:TestePratico.Application.Filters.DefaultExceptionFilterAttribute.OnException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            Método executado quando acontecer uma exceção
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:TestePratico.Application.Mapping.CandidaturaMapper.#ctor">
+            <summary>
+            Mapeamento De transações
+            </summary>
+        </member>
+        <member name="M:TestePratico.Application.Mapping.EmpresaMapper.#ctor">
+            <summary>
+            Mapeamento De transações
+            </summary>
+        </member>
+        <member name="M:TestePratico.Application.Mapping.UsuarioMapper.#ctor">
+            <summary>
+            Mapeamento De transações
+            </summary>
+        </member>
+        <member name="M:TestePratico.Application.Mapping.VagaMapper.#ctor">
+            <summary>
+            Mapeamento De transações
+            </summary>
+        </member>
+    </members>
+</doc>
