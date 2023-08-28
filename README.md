@@ -18,12 +18,16 @@
 ## 💻 Funcionalidades
  Nesse projeto, usuários administradores podem:
  - Inserir, Editar, Buscar e Deletar Vagas
+ - Obter Candidatos de uma vaga
+ - Obter Vagas de uma Empresa
+ - Obter vagas por Empresa
  - Inserir, Editar, Buscar e Deletar Empresas
  - Inserir, Editar, Buscar e Deletar usuários
  - Inserir, Editar, Buscar e Deletar candidaturas
  Usuários externos, podem: 
  - Visualizar Vagas
  - Se Candidatar e retirar a candidatura
+ - Visualizar vagas a qual se candidatou
 
 ## 🎲 Como Executar O Projeto
 
