@@ -5,7 +5,6 @@ using System.Diagnostics.CodeAnalysis;
 namespace TestePratico.Domain.Models
 {
     /// <summary>Result Simples</summary>
-    [ExcludeFromCodeCoverage]
     public class Result : Notifiable<Notificacao>
     {
         protected Result() { }
@@ -31,7 +30,6 @@ namespace TestePratico.Domain.Models
     }
 
     /// <summary>Result com tipo objeto</summary>
-    [ExcludeFromCodeCoverage]
     public class Result<T> : Result
     {
         /// <summary> Objeto do tipo T retornado</summary>

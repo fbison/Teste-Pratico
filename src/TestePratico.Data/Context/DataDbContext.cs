@@ -19,11 +19,6 @@ namespace TestePratico.Infra.Data.Context
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //Força o tamanho especifico para colunas mão mapeadas
-            //foreach (var property in modelBuilder.Model.GetEntityTypes()
-            //    .SelectMany(e => e.GetProperties()
-            //        .Where(p => p.ClrType == typeof(string))))
-            //    property.Relational().ColumnType = "varchar(100)";
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Usuario>(new UsuarioMap().Configure);
@@ -36,11 +31,16 @@ namespace TestePratico.Infra.Data.Context
 
             
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(DataDbContext).Assembly); 
-            //Desabilita todos os cascades das tabelas
+            
+            //Tratamento de deleção de tabelas referenciadas em outra
             foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
             {
-                
+                //1- Ao deletar uma entidade que seja referenciada em outra ele seta ela como null, evitando deleção em cascades
+
                 relationship.DeleteBehavior = DeleteBehavior.ClientSetNull;
+                //2- Outro possibilidade é permitir que ao deletar uma entidade que seja referenciada em outra ele delete
+                //ela em cascata
+
                 //if (relationship.DeclaringEntityType.Name.Contains(".Menu") || relationship.DeclaringEntityType.Name.Contains(".SubMenu"))
                 //{
                 //    relationship.DeleteBehavior = DeleteBehavior.Cascade;

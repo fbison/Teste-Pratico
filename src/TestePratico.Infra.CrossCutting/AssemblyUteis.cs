@@ -7,7 +7,6 @@ using System.Runtime.CompilerServices;
 
 namespace TestePratico.Infra.CrossCutting
 {
-	[ExcludeFromCodeCoverage]
     public static class AssemblyUteis
     {
 		private static string ProjectName(string camada) => typeof(AssemblyUteis).Namespace.Replace("Infra.CrossCutting", camada);
@@ -34,9 +33,8 @@ namespace TestePratico.Infra.CrossCutting
 			return GetTiposDefinidos("Domain").Where(
 				type => type.IsInterface
 				&& type.Namespace != null
-				&& (NamespaceMath(type, "Domain.Interfaces")
-				|| NamespaceMath(type, "Domain.Repositories")
-				|| NamespaceMath(type, "Domain.Servicebus")));
+				&& (NamespaceMath(type, "Domain.Interfaces"))
+				);
 		}
 
 		public static IEnumerable<Type> GetInfrastructureClasses()
@@ -44,9 +42,7 @@ namespace TestePratico.Infra.CrossCutting
 			return GetTiposDefinidos("Infra.Data").Where(
 				type => type.IsClass
 				&& !type.IsAbstract
-				&& (NamespaceMath(type, "Infra.Data.Gateways")
-					|| NamespaceMath(type, "Infra.Data.Repository")
-					|| NamespaceMath(type, "Infra.Data.Servicebus"))
+				&& (NamespaceMath(type, "Infra.Data.Repository"))
 				&& type.GetCustomAttribute<CompilerGeneratedAttribute>() == null);
 		}
 		private static bool NamespaceMath(Type type, string nomeCamada)

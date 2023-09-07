@@ -10,8 +10,8 @@ using TestePratico.Infra.Data.Context;
 namespace TestePratico.Infra.Data.Migrations
 {
     [DbContext(typeof(DataDbContext))]
-    [Migration("20230828000013_migration2")]
-    partial class migration2
+    [Migration("20230907000812_teste")]
+    partial class teste
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

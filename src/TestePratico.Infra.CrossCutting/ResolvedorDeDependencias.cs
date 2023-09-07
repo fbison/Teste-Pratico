@@ -6,7 +6,6 @@ using System.Text;
 
 namespace TestePratico.Infra.CrossCutting
 {
-	[ExcludeFromCodeCoverage]
 	public static class ResolvedorDeDependencias
     {
 		public static void AddResolvedorDeDependencias(this IServiceCollection services)

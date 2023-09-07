@@ -15,13 +15,11 @@ namespace TestePratico.Service.Services
 {
     public class VagaService : BaseService<Vaga>, IVagaService
     {
-        private readonly UserConfig _userConfig;
         private readonly IVagaRepository _vagaRepository;
 
-        public VagaService(IVagaRepository VagaRepository, IOptions<UserConfig> options) : base(VagaRepository)
+        public VagaService(IVagaRepository VagaRepository) : base(VagaRepository)
         {
             _vagaRepository = VagaRepository;
-            _userConfig = options.Value;
         }
 
         public Result<List<Candidato>> ObterCandidatosPorVaga(Guid idVaga)

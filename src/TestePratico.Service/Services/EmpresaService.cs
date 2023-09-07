@@ -14,13 +14,11 @@ namespace TestePratico.Service.Services
 {
     public class EmpresaService : BaseService<Empresa>, IEmpresaService
     {
-        private readonly UserConfig _userConfig;
-        private readonly IEmpresaRepository _EmpresaRepository;
+        private readonly IEmpresaRepository _empresaRepository;
 
-        public EmpresaService(IEmpresaRepository EmpresaRepository, IOptions<UserConfig> options) : base(EmpresaRepository)
+        public EmpresaService(IEmpresaRepository empresaRepository) : base(empresaRepository)
         {
-            _EmpresaRepository = EmpresaRepository;
-            _userConfig = options.Value;
+            _empresaRepository = empresaRepository;
         }
 
     }

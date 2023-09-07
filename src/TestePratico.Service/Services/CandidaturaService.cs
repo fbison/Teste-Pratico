@@ -15,13 +15,11 @@ namespace TestePratico.Service.Services
 {
     public class CandidaturaService : BaseService<Candidatura>, ICandidaturaService
     {
-        private readonly UserConfig _userConfig;
         private readonly ICandidaturaRepository _candidaturaRepository;
 
-        public CandidaturaService(ICandidaturaRepository CandidaturaRepository, IOptions<UserConfig> options) : base(CandidaturaRepository)
+        public CandidaturaService(ICandidaturaRepository CandidaturaRepository) : base(CandidaturaRepository)
         {
             _candidaturaRepository = CandidaturaRepository;
-            _userConfig = options.Value;
         }
         public override Result Criar(Candidatura candidatura) {
             try
